@@ -66,6 +66,6 @@ We found that DenseNet-121 with SGD is beginning to overfit after 75 epochs. Res
 
 ## Authors
 
-Brain, Fabian (1343358)
+Brain, Fabian
 
-Chang, Qiang (1568643)
+Chang, Qiang
