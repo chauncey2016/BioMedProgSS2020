@@ -1,0 +1,109 @@
+gestern:
+- debugging datenformate
+- shuffle
+- sgd
+- inception
+- logging und parametrisierung
+
+
+Letzte Woche:
+data loader [x]
+shuffle nach jeder epoche [x]
+plots [o]
+precision, confusion matrix? // accuracy, sensitivät, spezifizität
+fewer pixels with higher batch size?, command line parameters for automation
+
+
+todo: 3-fold cross validation
+
+
+
+ACCURACY
+
+1x data augmentation - adam
+
+densenet121
+5 epochs, BS 4(?), 1024x1024, LR? => 96 %
+16 epochs, BS 8, 1024x1024, LR 1e-5 => 93,90 %
+16 epochs, BS 8, 1024x1024, LR 1e-4 => 95,12 %
+20 epochs, BS 8, 224x224, LR 1e-4 => 48,29 %
+20 epochs, BS 8, 1024x1024, LR 1e-4 => 92,07%
+16 epochs, BS 8, 256x256, LR 1e-4 => 
+16 epochs, BS 8, 512x512, LR 1e-4 => 
+10 epochs, BS 8, 768x768, LR 1e-4 => 93,66%
+10 epochs, BS 8, 512x512, LR 1e-4 => 49,27%
+10 epochs, BS 8, 1024x1024, LR 1e-4 => 92,20% / second run: 76,71%
+20 epochs, BS 8, 1024x1024, LR 1e-4 => 93,54%
+10 epochs, BS 8, 1024x1024, LR 1e-5 => 
+80 epochs, BS 8, 1024x1024, LR 1e-4 => 96,95%
+
+inceptionv4
+10 epochs, BS 8, 299x299, LR 1e-4 => 46,83%
+10 epochs, BS 8, 1024x1024, LR 1e-4 => 91,22%
+20 epochs, BS 8, 1024x1024, LR 1e-4 => 91,95%, 93,66%
+10 epochs, BS 8, 1024x1024, LR 1e-5 => 
+
+--------------------------------------------------------------------------------
+1x data augmentation - sgd
+
+densenet121
+10 epochs, BS 8, 1024x1024, LR 1e-4 => 90,12%
+
+inceptionv4
+10 epochs, BS 8, 1024x1024, LR 1e-4 => 90,24%
+
+
+--------------------------------------------------------------------------------
+2x data augmentation - adam
+
+densenet121
+10 epochs - BS 8, 1024x1024, LR 1e-4 => 81,22% / second run: 88,78%
+10 epochs - BS 16, 600x600, LR 1e-4 => 90,98%
+
+inceptionv4
+10 epochs - BS 8, 1024x1024, LR 1e-4 => 91,46%
+10 epochs - BS 16, 600x600, LR 1e-4 => 48,78%
+
+
+Meetup(24.08.2020)
+Code Laufen:
+kleine image size(224)
+Größere batch size(48)
+
+Git Repository:
+Alle Dokumenten
+sauber
+restruckt
+Readme.md:was gemacht, Ergibnisse, Befehler für die richtige ergibnisse
+
+Präsentation: ppt
+Montag(31.08.2020)
+15-20min   Max30min
+
+welche Daten (Bilder)
+Background 
+Ziel
+Schwierigkeiten
+GPU Memory
+Results --> Densenet overfitting
+
+
+Todo:
+Memory Usage Plot x
+In cross validation plot für die accuracy von jedem fold die validation accuracy als einzelne linie x
+Architektur vergleichen im Plot -> 3 Balken pro Architektur für mean Acc, mean Sens, mean Spec in letzter Epoche (von validation)
+memory usage für jede architektur
+accuracy plot einzeln
+readme
+code kommentieren
+präsentation
+
+--------------------------------------------------------------------------------
+memory usage
+
+inception / adam / bs 48 / 224 / 6854 mb
+inception / sgd / bs 48 / 224 / 6830 mb
+resnet / adam / 48 / 224 / 6998 mb
+resnet / sgd / 48 / 224 / 6972 mb
+densenet / adam / 48 / 224 / 8310 mb
+densenet / sgd / 48 / 224 / 8286 mb
